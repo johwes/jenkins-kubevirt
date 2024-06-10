@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "jenkins secret:  $JENKINS_SECRET"
+echo "jekins tunnel: $JENKINS_TUNNEL"
+echo "jenkins agent name: $JENKINS_AGENT_NAME"
+echo "jenkins agent: $JENKINS_NAME"
+echo "jekins agent workdir: $JENKINS_AGENT_WORKDIR"
+echo "jenkins url: $JENKINS_URL"
+
+
+sleep 240
+
+virtctl ssh --local-ssh-opts="-o StrictHostKeyChecking=no" administrator@$JENKINS_AGENT_NAME.jwesterl --identity-file ~/.ssh/win_rsa -c "curl $JENKINS_URL/jnlpJars/agent.jar -o c:\jenkins\agent.jar"
+
+virtctl ssh --local-ssh-opts="-o StrictHostKeyChecking=no" administrator@$JENKINS_AGENT_NAME.jwesterl --identity-file ~/.ssh/win_rsa -c "java -jar c:\jenkins\agent.jar -jnlpUrl $JENKINS_URL/computer/$JENKINS_AGENT_NAME/jenkins-agent.jnlp -secret $JENKINS_SECRET -workDir "c:\jenkins" -noCertificateCheck"
+
+
+sleep 10
+
+oc delete vm $JENKINS_AGENT_NAME
