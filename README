@@ -1,1 +1,14 @@
 Empty
+
+
+Important, in my usr/local/bin directory I have stored the oc client and also virtctl client, see below
+'''
+-rwxr-xr-x. 1 jwesterl jwesterl      1808 10 jun 15.00 main.sh
+-rwxr-xr-x. 1 jwesterl jwesterl       822 10 jun 15.00 main.sh.backup
+-rwxr-xr-x. 1 jwesterl jwesterl 156504088 10 jun 15.00 oc
+-rwxr-xr-x. 1 jwesterl jwesterl        47 10 jun 15.00 post.sh
+-rwxr-xr-x. 1 jwesterl jwesterl       756 10 jun 15.00 pre.sh
+-rwxr-xr-x. 1 jwesterl jwesterl      1955 10 jun 15.00 test.sh
+-rwxr-xr-x. 1 jwesterl jwesterl  61679056 10 jun 15.00 virtctl
+'''
+they are too big to store in git so i've added them to gitignore, so if you want to rebuild this container you need to download those files.
