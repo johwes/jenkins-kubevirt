@@ -1,5 +1,7 @@
-Empty
 
+The base image is a container stored in a Red Hat registry that requires authentication. 
+You can register for a red hat developer account and use that for authentication.
+https://developers.redhat.com/
 
 Important, in my usr/local/bin directory I have stored the oc client and also virtctl client, see below
 
