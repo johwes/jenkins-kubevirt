@@ -14,3 +14,6 @@ Important, in my usr/local/bin directory I have stored the oc client and also vi
 -rwxr-xr-x. 1 jwesterl jwesterl  61679056 10 jun 15.00 virtctl
 
 they are too big to store in git so i've added them to gitignore, so if you want to rebuild this container you need to download those files.
+
+My Containerfile copies in ssh-keys, this is unsafe but this was for a demo so i "rushed it"..
+
